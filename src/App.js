@@ -1,14 +1,19 @@
 // src/App.js
 import React from 'react';
-import FileUpload from './FileUpload';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Result from './components/Result';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <FileUpload />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/result" element={<Result />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
