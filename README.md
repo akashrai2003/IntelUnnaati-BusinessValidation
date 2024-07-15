@@ -1,4 +1,4 @@
-# IntelUnnaati Business Validation
+# IntelUnnaati Business Validation (Team Neuro Nexus)
 
 ## Introduction
 
@@ -12,8 +12,6 @@ Welcome to the **IntelUnnaati Business Validation** project repository. This pro
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ## Features
 
