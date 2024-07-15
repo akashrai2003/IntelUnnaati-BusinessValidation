@@ -25,7 +25,7 @@ Welcome to the **IntelUnnaati Business Validation** project repository. This pro
 
 The repository is structured as follows:
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/f1383c68-9360-4ff3-819b-b7288010cf2a)
 
 
 ## Installation
