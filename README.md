@@ -89,4 +89,4 @@ We welcome contributions from the community. To contribute:
 4. Push to the branch (`git push origin feature/YourFeature`).
 5. Open a pull request.
 
-## Contact
+
