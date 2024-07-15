@@ -77,3 +77,5 @@ We welcome contributions from the community. To contribute:
 3. Commit your changes (`git commit -m 'Add your feature'`).
 4. Push to the branch (`git push origin feature/YourFeature`).
 5. Open a pull request.
+
+## Contact
