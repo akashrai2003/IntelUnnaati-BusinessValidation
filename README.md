@@ -25,7 +25,18 @@ Welcome to the **IntelUnnaati Business Validation** project repository. This pro
 
 The repository is structured as follows:
 
-![image](https://github.com/user-attachments/assets/f1383c68-9360-4ff3-819b-b7288010cf2a)
+- **backend/**: Contains scripts for data collection, data analysis, and validation model.
+  - `data_collection.py`: Script for collecting data.
+  - `data_analysis.py`: Script for analyzing data.
+  - `validation_model.py`: Script containing the validation model.
+  
+- **frontend/**: Includes scripts for visualization and generating reports.
+  - `visualization.py`: Script for data visualization.
+  - `generate_report.py`: Script for generating reports based on analysis.
+  
+- **config/**: Configuration files used in the project.
+  - `data_sources.json`: JSON file listing data sources.
+  - `validation_config.json`: Configuration file for validation settings.
 
 
 ## Installation
