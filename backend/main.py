@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
 import os
 import traceback
 from dotenv import load_dotenv
@@ -15,6 +15,7 @@ from fastapi import FastAPI, File, Form, UploadFile, Depends, HTTPException, Req
 import json
 from data_loaders import load_documents
 from upload import save_data
+from utils.labels import find_labels
 import logging
 from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
 logging.basicConfig(level=logging.INFO)
@@ -84,7 +85,7 @@ async def upload_files(
         )
         total_docs.extend(docs)
     try:
-        save_data(total_docs)
+        length = save_data(total_docs)
         return {"message": "Files uploaded successfully", "metadata": metadata}, 200
     except Exception as e:
         traceback.print_exc()
@@ -93,4 +94,23 @@ async def upload_files(
     
 @app.post("/results")
 async def get_results(
-     
+    input_dir: str = "user_files", 
+    input_file: str = "user_document.txt"
+
+):
+    '''
+    Get the results from the uploaded files.
+    '''
+    list_of_clauses = []
+    file_path = os.path.join(input_dir, input_file)
+    with open(file_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+    list_of_clauses = find_clauses(content)
+    label_preds = find_labels(list_of_clauses)
+    pdf = create_pdf(list_of_clauses, label_preds)
+    return FileResponse(path=pdf_path, filename="results.pdf", media_type='application/pdf')
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="127.0.0.1", port=5000)
