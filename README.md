@@ -25,6 +25,19 @@ Welcome to the **IntelUnnaati Business Validation** project repository. This pro
 
 ## Project Structure
 
+IntelUnnaati-BusinessValidation/
+├── backend/
+│ ├── data_collection.py
+│ ├── data_analysis.py
+│ └── validation_model.py
+├── frontend/
+│ ├── visualization.py
+│ └── generate_report.py
+├── config/
+│ ├── data_sources.json
+│ └── validation_config.json
+└── README.md
+
 
 ## Installation
 
@@ -75,11 +88,3 @@ We welcome contributions from the community. To contribute:
 3. Commit your changes (`git commit -m 'Add your feature'`).
 4. Push to the branch (`git push origin feature/YourFeature`).
 5. Open a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-For any inquiries or feedback, please reach out to [Akash Rai](https://github.com/akashrai2003).
